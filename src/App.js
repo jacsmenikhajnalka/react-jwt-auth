@@ -12,6 +12,9 @@ import Profile from "./components/profile.component";
 import BoardUser from "./components/board-user.component";
 import BoardModerator from "./components/board-moderator.component";
 import BoardAdmin from "./components/board-admin.component";
+import Proba from "./sajatosztalyok/Proba";
+import Konyv from "./sajatosztalyok/Konyv";
+
 
 class App extends Component {
   constructor(props) {
@@ -54,6 +57,18 @@ class App extends Component {
             <li className="nav-item">
               <Link to={"/home"} className="nav-link">
                 Home
+              </Link>
+            </li>
+
+            <li className="nav-item">
+              <Link to={"/Proba"} className="sajatosztalyok">
+                Próba
+              </Link>
+            </li>
+
+            <li className="nav-item">
+              <Link to={"/Konyv"} className="sajatosztalyok">
+                Könyv
               </Link>
             </li>
 
@@ -121,6 +136,8 @@ class App extends Component {
             <Route path="/user" component={BoardUser} />
             <Route path="/mod" component={BoardModerator} />
             <Route path="/admin" component={BoardAdmin} />
+            <Route path="/Proba" component={Proba} />
+            <Route path="/Konyv" component={Konyv} />
           </Switch>
         </div>
       </div>
