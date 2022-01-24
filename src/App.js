@@ -14,7 +14,7 @@ import BoardModerator from "./components/board-moderator.component";
 import BoardAdmin from "./components/board-admin.component";
 import Proba from "./sajatosztalyok/Proba";
 import Konyv from "./sajatosztalyok/Konyv";
-
+import Adattorles from "./sajatosztalyok/Adattorles";
 
 class App extends Component {
   constructor(props) {
@@ -87,6 +87,13 @@ class App extends Component {
                 </Link>
               </li>
             )}
+            {showAdminBoard && (
+              <li className="nav-item">
+                <Link to={"/Adattorles"} className="nav-link">
+                 Tipus torles
+                </Link>
+              </li>
+            )}
 
             {currentUser && (
               <li className="nav-item">
@@ -138,6 +145,7 @@ class App extends Component {
             <Route path="/admin" component={BoardAdmin} />
             <Route path="/Proba" component={Proba} />
             <Route path="/Konyv" component={Konyv} />
+            <Route path="/Adattorles" component={Adattorles} />
           </Switch>
         </div>
       </div>
