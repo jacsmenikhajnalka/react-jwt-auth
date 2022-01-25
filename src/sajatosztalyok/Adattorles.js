@@ -1,6 +1,7 @@
 
 import React from 'react';
-import {StyleSheet, FlatList, ActivityIndicator, Text, View, Image , TouchableOpacity } from 'react-native';
+import {StyleSheet, FlatList, ActivityIndicator, Text, View, Image , TouchableOpacity } 
+from 'react-native-web';
 
 export default class FetchExample extends React.Component {
 
@@ -15,7 +16,7 @@ export default class FetchExample extends React.Component {
       bevitel1:szam
     }
 
-  fetch("http://localhost:3000/szavazatfelvitel", {
+  fetch("http://localhost:8080/torleskonyv", {
       method: "POST",
       body: JSON.stringify(bemenet),
       headers: {"Content-type": "application/json; charset=UTF-8"}
@@ -29,7 +30,7 @@ export default class FetchExample extends React.Component {
 
 
   componentDidMount(){
-    return fetch('http://localhost:3000/konyv')
+    return fetch('http://localhost:8080/konyv')
       .then((response) => response.json())
       .then((responseJson) => {
 
@@ -66,13 +67,13 @@ export default class FetchExample extends React.Component {
 
           <View >
           <Text style={{color:"brown",fontSize:20,textAlign:"center",marginTop:15,marginBottom:5}}   >{item.konyv_id} </Text>
-          <Image  source={{uri: 'http://localhost:3000/'+item.konyv_kep}} style={{width:300,height:300,marginLeft:"auto",marginRight:"auto"}} />  
+          <Image  source={{uri: 'http://localhost:8080/'+item.konyv_kep}} style={{width:300,height:300,marginLeft:"auto",marginRight:"auto"}} />  
 
           <TouchableOpacity
         style={styles.kekgomb}
         onPress={async ()=>this.szavazat(item.konyv_id)}
       >
-        <Text style={{color:"white",fontWeight:"bold",fontSize:15}}  >Erre szavazok</Text>
+        <Text style={{color:"white",fontWeight:"bold",fontSize:15}}  >Törlés</Text>
       </TouchableOpacity>
           </View>
         

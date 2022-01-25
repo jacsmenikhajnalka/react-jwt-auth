@@ -72,6 +72,12 @@ class App extends Component {
               </Link>
             </li>
 
+            <li className="nav-item">
+              <Link to={"/torleskonyvfajtai"} className="sajatosztalyok">
+                Könyv fajtai
+              </Link>
+            </li>
+
             {showModeratorBoard && (
               <li className="nav-item">
                 <Link to={"/mod"} className="nav-link">

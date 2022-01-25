@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, FlatList, ActivityIndicator, Text, View, Image , TouchableOpacity , Modal} from 'react-native';
-import { color } from 'react-native-reanimated';
+import { color } from 'react-native-web';
 
 const ipcim="localhost";
 
@@ -84,7 +84,7 @@ export default class Tipusok extends React.Component {
             }}>
           <View style = {{backgroundColor:"#40E0D0"}} /* Modal Törzse */>
 
-          <Text >{this.state.konyvdata.leiras_konyv}</Text>
+          <Text >{this.state.konyvdata.konyv_nev}</Text>
 
         
           </View>
@@ -103,7 +103,7 @@ export default class Tipusok extends React.Component {
 
           <View >
           <Text style={{color:"purple",fontSize:28,textAlign:"center",marginTop:5,marginBottom:5}}   >{item.konyv_nev} </Text>
-          <Text style={{color:"purple",fontSize:20,textAlign:"center",marginTop:5,marginBottom:5}}   >{item.konyvfajta_kepek} </Text>
+          <Text style={{color:"purple",fontSize:20,textAlign:"center",marginTop:5,marginBottom:5}}   >{item.konyv_kep} </Text>
         
            
           <TouchableOpacity 
