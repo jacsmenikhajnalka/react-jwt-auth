@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Switch, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Nav, Navbar, NavDropdown } from "react-bootstrap";
 import "./App.css";
 
 import AuthService from "./services/auth.service";
@@ -50,6 +51,62 @@ class App extends Component {
 
     return (
       <div>
+
+
+
+
+
+<Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+      <Navbar.Brand href="#home">
+        
+        Dice Roller
+      </Navbar.Brand>
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+      <Navbar.Collapse id="responsive-navbar-nav">
+        <Nav className="mr-auto">
+          <Nav.Link href="#features">Features</Nav.Link>
+          <Nav.Link href="#pricing">Pricing</Nav.Link>
+
+          <NavDropdown title="Admin" id="collasible-nav-dropdown">
+          {showAdminBoard && (
+               <NavDropdown.Item href="/Adattorles">Adattorles</NavDropdown.Item>
+            )}
+
+           
+            <NavDropdown.Item href="#action/3.2">
+              
+
+            </NavDropdown.Item>
+            <NavDropdown.Item href="/Konyv">Könyv</NavDropdown.Item>
+            <NavDropdown.Divider />
+            <NavDropdown.Item href="#action/3.4">
+              Separated link
+            </NavDropdown.Item>
+          </NavDropdown>
+        </Nav>
+        <Nav>
+          <Nav.Link href="#deets">More deets</Nav.Link>
+          <Nav.Link eventKey={2} href="#memes">
+            Dank memes
+          </Nav.Link>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
+  );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <nav className="navbar navbar-expand navbar-dark bg-dark">
           <Link to={"/"} className="sajatosztaly">
             bezKoder
@@ -86,6 +143,9 @@ class App extends Component {
                 </Link>
               </li>
             )}
+
+
+
 
             {showAdminBoard && (
               <li className="nav-item">
