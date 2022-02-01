@@ -65,6 +65,7 @@ class App extends Component {
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
           <Nav.Link href="#features">Features</Nav.Link>
+
           <Nav.Link href="#pricing">Pricing</Nav.Link>
 
           <NavDropdown title="Admin" id="collasible-nav-dropdown">
@@ -84,12 +85,31 @@ class App extends Component {
             </NavDropdown.Item>
           </NavDropdown>
         </Nav>
-        <Nav>
-          <Nav.Link href="#deets">More deets</Nav.Link>
-          <Nav.Link eventKey={2} href="#memes">
-            Dank memes
-          </Nav.Link>
-        </Nav>
+        {currentUser ?
+
+(
+<Nav className="">
+ <Nav.Link href="/profile">
+ {currentUser.username}
+ </Nav.Link>
+ <Nav.Link href="/login" onClick={this.logOut}>
+ Kijelentkezés
+
+</Nav.Link> </Nav>
+)
+ :
+
+(
+
+<Nav className="">
+ <Nav.Link href="/
+login"> Login </Nav.Link>
+
+<Nav.Link href="/register">
+ Sign up
+</Nav.Link>
+ </Nav>
+)}
       </Navbar.Collapse>
     </Navbar>
   );
@@ -173,7 +193,7 @@ class App extends Component {
             {currentUser && (
               <li className="nav-item">
                 <Link to={"/user"} className="nav-link">
-                  User
+                  Felhasználó
                 </Link>
               </li>
             )}
@@ -188,7 +208,7 @@ class App extends Component {
               </li>
               <li className="nav-item">
                 <a href="/login" className="nav-link" onClick={this.logOut}>
-                  LogOut
+                  Kijelentkezés
                 </a>
               </li>
             </div>
