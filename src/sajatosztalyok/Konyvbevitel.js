@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { StyleSheet,Text, TextInput, View,TouchableOpacity } from 'react-native';
 
-export default class Bevitel extends Component {
+export default class Konyvbevitel extends Component {
   constructor(props) {
     super(props);
     this.state = {
 
        konyv_nev: '',
-       kony_kep:'',
+       konyv_kep:'',
         
 
     };
@@ -20,8 +20,8 @@ felvitel=async ()=>{
       bevitel1:this.state.konyv_nev,
      
       bevitel2:this.state.konyv_kep,
-
       bevitel3:this.state.konyv_tipus
+     
     }
 
     fetch('http://localhost:8080/felvitel',{
@@ -35,7 +35,7 @@ felvitel=async ()=>{
     .then((szoveg) => {
 
     alert(szoveg)
-     this.props.frissit() 
+     
 
 })
     
@@ -51,10 +51,10 @@ felvitel=async ()=>{
           </Text>
         <TextInput
           placeholderTextColor="black"
-          style={{height: 40,width:'50%',alignSelf:'center',backgroundColor:'lightgreen',borderColor:'black',color:"black"}}
+          style={{height: 40,width:'50%',alignSelf:'center',backgroundColor:'white',borderColor:'black',color:"black"}}
           placeholder="Add meg a nevét:"
-          onChangeText={(nev) => this.setState({nev})}
-          value={this.state.nev}
+          onChangeText={(konyv_nev) => this.setState({konyv_nev})}
+          value={this.state.konyv_nev}
         />
 
         <Text style={{paddingTop: 10, fontSize: 22,color:'black',textAlign:'center'}}>
@@ -62,10 +62,10 @@ felvitel=async ()=>{
           </Text>
         <TextInput
           placeholderTextColor="black"
-          style={{height: 120, width:'50%',alignSelf:'center',backgroundColor:'lightgreen',marginBottom:5,textAlignVertical:'top',color:"black"}}
+          style={{height: 120, width:'50%',alignSelf:'center',backgroundColor:'white',marginBottom:5,textAlignVertical:'top',color:"black"}}
           placeholder="Add meg az író nevét:"
-          onChangeText={(komment) => this.setState({komment})}
-          value={this.state.komment}
+          onChangeText={(konyv_kep) => this.setState({konyv_kep})}
+          value={this.state.konyv_kep}
         />
          <TouchableOpacity
           onPress={async ()=>this.felvitel()}>
