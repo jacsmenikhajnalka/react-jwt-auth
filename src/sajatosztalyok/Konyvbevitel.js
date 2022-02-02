@@ -19,8 +19,9 @@ felvitel=async ()=>{
     let bemenet={
       bevitel1:this.state.konyv_nev,
      
-      bevitel2:this.state.kony_kep
-      
+      bevitel2:this.state.konyv_kep,
+
+      bevitel3:this.state.konyv_tipus
     }
 
     fetch('http://localhost:8080/felvitel',{
@@ -43,25 +44,25 @@ felvitel=async ()=>{
 
   render() {
     return (
-    <View style = {{backgroundColor:'darkblue',width:'80%',borderRadius:20,alignSelf:'center'}}>
+    <View style = {{backgroundColor:'lightgreen',width:'80%',borderRadius:20,alignSelf:'center'}}>
       <View style={{padding: 10}}>
-          <Text style={{padding: 10, fontSize: 22,color:'white',textAlign:'center'}}>
+          <Text style={{padding: 10, fontSize: 22,color:'black',textAlign:'center'}}>
              Könyv név:
           </Text>
         <TextInput
-          placeholderTextColor="white"
-          style={{height: 40,width:'50%',alignSelf:'center',backgroundColor:'blue',borderColor:'black',color:"white"}}
+          placeholderTextColor="black"
+          style={{height: 40,width:'50%',alignSelf:'center',backgroundColor:'lightgreen',borderColor:'black',color:"black"}}
           placeholder="Add meg a nevét:"
           onChangeText={(nev) => this.setState({nev})}
           value={this.state.nev}
         />
 
-        <Text style={{paddingTop: 10, fontSize: 22,color:'white',textAlign:'center'}}>
+        <Text style={{paddingTop: 10, fontSize: 22,color:'black',textAlign:'center'}}>
               Könyv kép:
           </Text>
         <TextInput
-          placeholderTextColor="white"
-          style={{height: 120, width:'50%',alignSelf:'center',backgroundColor:'blue',marginBottom:5,textAlignVertical:'top',color:"white"}}
+          placeholderTextColor="black"
+          style={{height: 120, width:'50%',alignSelf:'center',backgroundColor:'lightgreen',marginBottom:5,textAlignVertical:'top',color:"black"}}
           placeholder="Add meg az író nevét:"
           onChangeText={(komment) => this.setState({komment})}
           value={this.state.komment}
@@ -82,14 +83,14 @@ felvitel=async ()=>{
 const styles = StyleSheet.create({
     gombSzoveg:{
             textAlign:'center',
-            color:'white',
+            color:'black',
             marginTop:'auto',
             marginBottom:'auto',
             fontSize:25
     },
     gomb:{
             height:45,
-            backgroundColor:'blue',
+            backgroundColor:'lightgreen',
             width:'45%',
             alignSelf:'center',
             borderRadius:10
