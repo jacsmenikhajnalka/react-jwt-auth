@@ -59,14 +59,14 @@ class App extends Component {
 <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Navbar.Brand href="#home">
         
-        Dice Roller
+        Kezdőlap
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link href="#features">Features</Nav.Link>
+          <Nav.Link href="/Konyv" className="sajatosztalyok">Könyv</Nav.Link>
 
-          <Nav.Link href="#pricing">Pricing</Nav.Link>
+         {/* <Nav.Link href="#pricing">Pricing</Nav.Link>*/}
 
           <NavDropdown title="Admin" id="collasible-nav-dropdown">
           {showAdminBoard && (
@@ -80,8 +80,8 @@ class App extends Component {
             </NavDropdown.Item>
             <NavDropdown.Item href="/Konyv">Könyv</NavDropdown.Item>
             <NavDropdown.Divider />
-            <NavDropdown.Item href="#action/3.4">
-              Separated link
+            <NavDropdown.Item href="/Konyvbevitel">
+             Könyvbevitel
             </NavDropdown.Item>
           </NavDropdown>
         </Nav>
@@ -125,7 +125,7 @@ login"> Login </Nav.Link>
 
 
 
-
+{/*
 
         <nav className="navbar navbar-expand navbar-dark bg-dark">
           <Link to={"/"} className="sajatosztaly">
@@ -228,7 +228,7 @@ login"> Login </Nav.Link>
             </div>
           )}
         </nav>
-
+          */}
         <div className="container mt-3">
           <Switch>
             <Route exact path={["/", "/home"]} component={Home} />

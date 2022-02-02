@@ -15,19 +15,15 @@ export default class Bevitel extends Component {
 
 felvitel=async ()=>{
     //alert("megnyomva a gomb")
-
-    if (this.state.konyv_id=="" || this.state.konyv_nev==""|| this.state.kony_kep=="")
-    {
-      alert("Add meg a könyv nevét és iróját!")
-      return
-    }
+       
     let bemenet={
-      bevitel1:this.state.nev,
+      bevitel1:this.state.konyv_nev,
      
-      bevitel2:this.props.akttema_bevitel
+      bevitel2:this.state.kony_kep
+      
     }
 
-    fetch('http://localhost:8080/konyv',{
+    fetch('http://localhost:8080/felvitel',{
       method: "POST",
       body: JSON.stringify(bemenet),
       headers: {"Content-type": "application/json; charset=UTF-8"}
@@ -50,7 +46,7 @@ felvitel=async ()=>{
     <View style = {{backgroundColor:'darkblue',width:'80%',borderRadius:20,alignSelf:'center'}}>
       <View style={{padding: 10}}>
           <Text style={{padding: 10, fontSize: 22,color:'white',textAlign:'center'}}>
-              Név:
+             Könyv név:
           </Text>
         <TextInput
           placeholderTextColor="white"
@@ -61,7 +57,7 @@ felvitel=async ()=>{
         />
 
         <Text style={{paddingTop: 10, fontSize: 22,color:'white',textAlign:'center'}}>
-              Író:
+              Könyv kép:
           </Text>
         <TextInput
           placeholderTextColor="white"
