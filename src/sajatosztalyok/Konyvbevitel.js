@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet,Text, TextInput, View,TouchableOpacity } from 'react-native';
+import FileUpload from "./upload"
 
 export default class Konyvbevitel extends Component {
   constructor(props) {
@@ -43,6 +44,7 @@ felvitel=async ()=>{
 
 
   render() {
+
     return (
     <View style = {{backgroundColor:'lightgreen',width:'80%',borderRadius:20,alignSelf:'center'}}>
       <View style={{padding: 10}}>
@@ -67,6 +69,7 @@ felvitel=async ()=>{
           onChangeText={(konyv_kep) => this.setState({konyv_kep})}
           value={this.state.konyv_kep}
         />
+        
          <TouchableOpacity
           onPress={async ()=>this.felvitel()}>
           <View style={styles.gomb}>
@@ -75,6 +78,8 @@ felvitel=async ()=>{
         </TouchableOpacity>
         
       </View>
+
+      <FileUpload konyv_nev={this.state.konyv_nev}></FileUpload>
     </View>
     );
   }
