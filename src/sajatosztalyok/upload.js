@@ -25,9 +25,9 @@ function FileUpload(props) {
             //--------------------------
             alert(props.konyv_nev)
             let bemenet={
-                bevitel1:this.state.nev,
-                bevitel2:this.state.komment,
-                bevitel3:this.props.akttema_bevitel
+                bevitel1:this.props.konyv_nev,
+                bevitel2:this.props.konyv_tipus,
+                bevitel3:this.props.konyv_kep
               }
           
               fetch('http://localhost:8080/felvitel',{

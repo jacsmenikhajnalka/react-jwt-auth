@@ -20,8 +20,9 @@ felvitel=async ()=>{
     let bemenet={
       bevitel1:this.state.konyv_nev,
      
-      bevitel2:this.state.konyv_kep,
-      bevitel3:this.state.konyv_tipus
+     
+      bevitel2:this.state.konyv_tipus,
+      bevitel3:this.state.konyv_kep,
      
     }
 
@@ -58,6 +59,17 @@ felvitel=async ()=>{
           onChangeText={(konyv_nev) => this.setState({konyv_nev})}
           value={this.state.konyv_nev}
         />
+         <Text style={{padding: 10, fontSize: 22,color:'black',textAlign:'center'}}>
+             Könyv tipus
+          </Text>
+        <TextInput
+          placeholderTextColor="black"
+          style={{height: 40,width:'50%',alignSelf:'center',backgroundColor:'white',borderColor:'black',color:"black"}}
+          placeholder="Add meg a tipus nevét:"
+          onChangeText={(konyv_tipus) => this.setState({konyv_tipus})}
+          value={this.state.konyv_tipus}
+        />
+
 
         <Text style={{paddingTop: 10, fontSize: 22,color:'black',textAlign:'center'}}>
               Könyv kép:
@@ -65,7 +77,7 @@ felvitel=async ()=>{
         <TextInput
           placeholderTextColor="black"
           style={{height: 120, width:'50%',alignSelf:'center',backgroundColor:'white',marginBottom:5,textAlignVertical:'top',color:"black"}}
-          placeholder="Add meg az író nevét:"
+          placeholder="Add meg az kép nevét:"
           onChangeText={(konyv_kep) => this.setState({konyv_kep})}
           value={this.state.konyv_kep}
         />
