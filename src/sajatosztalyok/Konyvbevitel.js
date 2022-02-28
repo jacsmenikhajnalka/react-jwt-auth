@@ -8,7 +8,9 @@ export default class Konyvbevitel extends Component {
     this.state = {
 
        konyv_nev: '',
+       konyv_tipus:'',
        konyv_kep:'',
+
         
 
     };
@@ -19,9 +21,7 @@ felvitel=async ()=>{
        
     let bemenet={
       bevitel1:this.state.konyv_nev,
-     
-     
-      bevitel2:this.state.konyv_tipus,
+     bevitel2:this.state.konyv_tipus,
       bevitel3:this.state.konyv_kep,
      
     }
@@ -74,24 +74,13 @@ felvitel=async ()=>{
         <Text style={{paddingTop: 10, fontSize: 22,color:'black',textAlign:'center'}}>
               Könyv kép:
           </Text>
-        <TextInput
-          placeholderTextColor="black"
-          style={{height: 120, width:'50%',alignSelf:'center',backgroundColor:'white',marginBottom:5,textAlignVertical:'top',color:"black"}}
-          placeholder="Add meg az kép nevét:"
-          onChangeText={(konyv_kep) => this.setState({konyv_kep})}
-          value={this.state.konyv_kep}
-        />
         
-         <TouchableOpacity
-          onPress={async ()=>this.felvitel()}>
-          <View style={styles.gomb}>
-            <Text style={styles.gombSzoveg}>Felvitel</Text>
-          </View>
-        </TouchableOpacity>
+        
+         
         
       </View>
 
-      <FileUpload konyv_nev={this.state.konyv_nev}></FileUpload>
+      <FileUpload konyv_nev={this.state.konyv_nev} konyv_tipus={this.state.konyv_tipus} konyv_kep={this.state.konyv_kep}></FileUpload>
     </View>
     );
   }

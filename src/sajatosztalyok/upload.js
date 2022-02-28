@@ -25,9 +25,9 @@ function FileUpload(props) {
             //--------------------------
             alert(props.konyv_nev)
             let bemenet={
-                bevitel1:this.props.konyv_nev,
-                bevitel2:this.props.konyv_tipus,
-                bevitel3:this.props.konyv_kep
+                bevitel1:props.konyv_nev,
+                bevitel2:props.konyv_tipus,
+                bevitel3:fileName
               }
           
               fetch('http://localhost:8080/felvitel',{
@@ -55,7 +55,7 @@ function FileUpload(props) {
         return (
             <div className="App">
                 <input type="file" onChange={saveFile} />
-                <button onClick={uploadFile}>Upload</button>
+                <button onClick={uploadFile}>Felvitel</button>
             </div>
         );
 }
