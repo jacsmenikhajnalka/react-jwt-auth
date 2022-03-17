@@ -103,10 +103,10 @@ class App extends Component {
 
 <Nav className="">
  <Nav.Link href="/
-login"> Login </Nav.Link>
+login"> Belépés </Nav.Link>
 
 <Nav.Link href="/register">
- Sign up
+ Regisztrálás
 </Nav.Link>
  </Nav>
 )}

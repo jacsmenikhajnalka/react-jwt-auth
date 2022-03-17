@@ -37,7 +37,7 @@ export default class Tipusok extends React.Component {
 
 
   componentDidMount(){
-    alert("hello")
+    //alert("hello")
     
     return fetch('http://localhost:8080/konyv')
       .then((response) => response.json())
@@ -50,7 +50,7 @@ export default class Tipusok extends React.Component {
         }, function(){
 
         });
-        alert(JSON.stringify(this.state.dataSource))
+       // alert(JSON.stringify(this.state.dataSource))
       })
       .catch((error) =>{
         console.error(error);
@@ -103,7 +103,7 @@ export default class Tipusok extends React.Component {
 
           <View >
           <Text style={{color:"purple",fontSize:28,textAlign:"center",marginTop:5,marginBottom:5}}   >{item.konyv_nev} </Text>
-          <Text style={{color:"purple",fontSize:20,textAlign:"center",marginTop:5,marginBottom:5}}   >{item.konyv_kep} </Text>
+         
         
            
           <TouchableOpacity 
